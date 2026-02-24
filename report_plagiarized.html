@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CodeClone Analysis Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #f8fafc;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+        
+        .verdict-box {
+            background: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 30px;
+            margin: 30px;
+            border-radius: 8px;
+        }
+        
+        .verdict-box h2 {
+            color: #ef4444;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .score-main {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ef4444;
+            margin: 10px 0;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8fafc;
+        }
+        
+        .metric-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .metric-label {
+            color: #64748b;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        
+        .metric-value {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        .metric-bar {
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        
+        .metric-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+        
+        .code-comparison {
+            padding: 30px;
+        }
+        
+        .code-section {
+            margin-bottom: 30px;
+        }
+        
+        .code-section h3 {
+            color: #1e293b;
+            margin-bottom: 15px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .code-section h3::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background: #667eea;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+        
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 30px;
+            background: white;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 6px;
+        }
+        
+        .stat-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .stat-value {
+            color: #1e293b;
+            font-weight: 600;
+        }
+        
+        .footer {
+            background: #f8fafc;
+            padding: 20px;
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+        }
+        
+        .timestamp {
+            margin-top: 10px;
+            font-size: 13px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 CodeClone Analysis Report</h1>
+            <p>Advanced Code Plagiarism Detection System</p>
+        </div>
+        
+        <div class="verdict-box">
+            <h2>Analysis Result</h2>
+            <div class="score-main">90.0%</div>
+            <p style="font-size: 18px; margin-top: 10px;">🚨 HIGHLY SUSPICIOUS - Very likely plagiarized</p>
+        </div>
+        
+        <div class="metrics">
+            <div class="metric-card">
+                <div class="metric-label">Function Structure</div>
+                <div class="metric-value">100.0%</div>
+                <div class="metric-bar">
+                    <div class="metric-bar-fill" style="width: 100.0%"></div>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">Control Flow Logic</div>
+                <div class="metric-value">100.0%</div>
+                <div class="metric-bar">
+                    <div class="metric-bar-fill" style="width: 100.0%"></div>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">Operation Patterns</div>
+                <div class="metric-value">100.0%</div>
+                <div class="metric-bar">
+                    <div class="metric-bar-fill" style="width: 100.0%"></div>
+                </div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">Exact Structure Match</div>
+                <div class="metric-value">0.0%</div>
+                <div class="metric-bar">
+                    <div class="metric-bar-fill" style="width: 0.0%"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-label">original.py - Functions</span>
+                <span class="stat-value">4</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">plagiarized.py - Functions</span>
+                <span class="stat-value">4</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">original.py - Control Structures</span>
+                <span class="stat-value">5</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">plagiarized.py - Control Structures</span>
+                <span class="stat-value">5</span>
+            </div>
+        </div>
+        
+        <div class="code-comparison">
+            <div class="code-section">
+                <h3>File 1: original.py</h3>
+                <pre><code>def find_maximum(numbers):
+    if not numbers:
+        return None
+    
+    max_value = numbers[0]
+    for num in numbers:
+        if num &gt; max_value:
+            max_value = num
+    return max_value
+
+def calculate_average(data):
+    total = 0
+    count = 0
+    for item in data:
+        total += item
+        count += 1
+    return total / count if count &gt; 0 else 0
+
+class Student:
+    def __init__(self, name, grades):
+        self.name = name
+        self.grades = grades
+    
+    def get_gpa(self):
+        if len(self.grades) == 0:
+            return 0.0
+        return sum(self.grades) / len(self.grades)</code></pre>
+            </div>
+            
+            <div class="code-section">
+                <h3>File 2: plagiarized.py</h3>
+                <pre><code>def get_max(items):
+    if not items:
+        return None
+    
+    biggest = items[0]
+    for x in items:
+        if x &gt; biggest:
+            biggest = x
+    return biggest
+
+def compute_mean(values):
+    sum_total = 0
+    counter = 0
+    for val in values:
+        sum_total += val
+        counter += 1
+    return sum_total / counter if counter &gt; 0 else 0
+
+class Pupil:
+    def __init__(self, student_name, scores):
+        self.student_name = student_name
+        self.scores = scores
+    
+    def calculate_grade_point(self):
+        if len(self.scores) == 0:
+            return 0.0
+        return sum(self.scores) / len(self.scores)</code></pre>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>CodeClone</strong> - Intelligent Code Plagiarism Detection</p>
+            <p class="timestamp">Generated on February 24, 2026 at 06:05 PM</p>
+        </div>
+    </div>
+</body>
+</html>
